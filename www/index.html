@@ -8,12 +8,14 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
 </head>
-<body ng-app="starter">
+<body ng-app="app" ng-controller="CommonCtrl">
 <ion-nav-bar class="bar-stable">
     <ion-nav-back-button>
     </ion-nav-back-button>
