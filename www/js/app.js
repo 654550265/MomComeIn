@@ -10,7 +10,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngCordova'])
         }
     });
 })
-.config(function ($stateProvider, $urlRouterProvider, $compileProvider, $ionicConfigProvider,ChartJsProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $compileProvider, $ionicConfigProvider) {
     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|blob|content):|data:image\//);
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|file|geo|mailto|tel|chrome-extension):/);
     $ionicConfigProvider.backButton.previousTitleText(false).text('');
@@ -23,42 +23,55 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'ngCordova'])
         abstract: true,
         templateUrl: 'templates/tabs.html'
     })
-    .state('tab.dash', {
-        url: '/dash',
+    .state('login',{
+        url:'/login',
+        templateUrl:'templates/login/login.html',
+        controller:'loginCtrl'
+    })
+    .state('tab.index', {
+        url: '/index',
         views: {
-            'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
+            'tab-index': {
+                templateUrl: 'templates/index/index.html',
+                controller: 'indexCtrl'
             }
         }
     })
-    .state('tab.chats', {
-        url: '/chats',
+    .state('tab.Mothering', {
+        url: '/Mothering',
         views: {
-            'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
+            'tab-Mothering': {
+                templateUrl: 'templates/Mothering/Mothering.html',
+                controller: 'MotheringCtrl'
             }
         }
     })
-    .state('tab.chat-detail', {
-        url: '/chats/:chatId',
+    .state('tab.Record', {
+        url: '/Record',
         views: {
-            'tab-chats': {
-                templateUrl: 'templates/chat-detail.html',
-                controller: 'ChatDetailCtrl'
+            'tab-Record': {
+                templateUrl: 'templates/Record/Record.html',
+                controller: 'RecordCtrl'
             }
         }
     })
-
-    .state('tab.account', {
-        url: '/account',
+    .state('tab.CustomerService', {
+        url: '/CustomerService',
         views: {
-            'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
+            'tab-CustomerService': {
+                templateUrl: 'templates/CustomerService/CustomerService.html',
+                controller: 'CustomerServiceCtrl'
+            }
+        }
+    })
+    .state('tab.my', {
+        url: '/my',
+        views: {
+            'tab-my': {
+                templateUrl: 'templates/my/my.html',
+                controller: 'myCtrl'
             }
         }
     });
-    $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('tab/index');
 });
