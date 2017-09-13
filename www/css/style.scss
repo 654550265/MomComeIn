@@ -3,3 +3,7 @@ $designWidth: 750px;
 @function rem($px){
     @return $px / ($designWidth/10) * 1rem;
 }
+div{
+    padding-top:rem(40px);
+    margin-left:rem(30px);
+}
