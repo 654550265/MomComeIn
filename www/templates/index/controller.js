@@ -6,4 +6,7 @@ angular.module('app.controllers')
     $scope.$on("$ionicView.beforeEnter", function (event, data) {
         $ionicTabsDelegate.showBar(true);
     });
+    $scope.WchartLogin=function(){
+
+    }
 });
